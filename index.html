@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Jamadar | Electrical Engineer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        :root {
+            --primary-color: #f59e0b; /* Amber/electrical theme color */
+            --secondary-color: #fbbf24;
+            --text-dark: #1F2937;
+            --text-light: #4b5563;
+            --bg-color: #F3F4F6;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        #home {
+            min-height: 100vh; /* Ensure at least 100vh initially */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #fffbeb 0%, #ffffff 100%);
+            padding: 100px 5%; /* Increased top/bottom padding for content spacing */
+        }
+
+        .profile-img {
+            width: 200px; /* Adjust size, maybe slightly smaller on default/mobile */
+            height: 200px;
+            border-radius: 50%; /* Make it circular */
+            object-fit: cover; /* Ensure image fits well inside circle */
+            border: 5px solid var(--white); /* Subtle border */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Nice shadow */
+            margin-bottom: 25px; /* Space on all screens */
+        }
+
+        #home h1 {
+            font-size: 3.5rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        #home h1 span {
+            color: var(--primary-color);
+        }
+
+        #home h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        #home p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin-bottom: 30px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+        }
+
+        .btn-primary:hover {
+            background-color: #d97706;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Content Sections */
+        section {
+            padding: 80px 15%;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--text-dark);
+            position: relative;
+            font-weight: 700;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            transition: transform 0.3s ease;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .edu-list {
+            list-style: none;
+            text-align: left;
+            margin: 0 auto;
+            max-width: 600px;
+        }
+
+        .edu-list li {
+            background: var(--bg-color);
+            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .edu-list h4 {
+            color: var(--text-dark);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .edu-list span {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 40px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; 
+            }
+            #home h1 {
+                font-size: 2.5rem;
+            }
+            section {
+                padding: 60px 5%;
+            }
+            .profile-img {
+                width: 180px; /* Slightly smaller on very small mobile */
+                height: 180px;
+            }
+        }
+        @media (min-width: 768px) {
+            .profile-img {
+                width: 250px; /* Larger image on desktop */
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#home" class="logo">Aditya<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#qualification">Education</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#dreams">Goals</a></li>
+            <li><a href="#family">Family</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <img src="Screenshot 2026-03-31 221349.png" alt="Aditya Jamadar" class="profile-img">
+        <h1>Hi, I'm <span>Aditya Jamdar</span></h1>
+        <h2>Aspiring Electrical Engineer</h2>
+        <p>I care more about building things that work than just scoring marks. Focused on practical understanding, real-world problem solving, and consistent skill-building.</p>
+        <div class="btn-group">
+            <a href="#about" class="btn btn-primary">Know More</a>
+            <a href="#qualification" class="btn btn-outline">My Journey</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="card">
+            <p>I’m an aspiring electrical engineer who pushes toward practical understanding, whether it’s designing circuits, solving real engineering problems, or breaking down how systems actually function.</p>
+            <p>While most people stay comfortable with theory, I believe in getting my hands dirty. I’m still early in my journey, but I focus on consistency, skill-building, and real progress instead of shortcuts.</p>
+        </div>
+    </section>
+
+    <section id="qualification">
+        <h2 class="section-title">Education</h2>
+        <div class="card" style="background: transparent; box-shadow: none; padding: 0;">
+            <ul class="edu-list">
+                <li>
+                    <h4>B.Tech in Electrical Engineering</h4>
+                    <p style="margin-bottom: 0;">Annasaheb Dange College of Engineering & Technology (ADCET), Ashta</p>
+                    <p style="font-size: 0.9rem; margin-top: 5px;"><em>Currently Pursuing</em></p>
+                </li>
+                <li>
+                    <h4>Higher Secondary Certificate (HSC)</h4>
+                    <p style="margin-bottom: 0;">BEMS and Junior College</p>
+                    <span>66.50%</span>
+                </li>
+                <li>
+                    <h4>Secondary School Certificate (SSC)</h4>
+                    <p style="margin-bottom: 0;">SEMS</p>
+                    <span>89.80%</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="hobbies">
+        <h2 class="section-title">My Hobbies</h2>
+        <div class="card">
+            <p>My hobbies revolve around building and improving myself. I actively work on <strong>electronics projects</strong> to sharpen my practical skills and enjoy solving real-world problems.</p>
+            <p>I also follow a <strong>consistent gym routine</strong>, which has strengthened my discipline and mindset. Outside of this, I love exploring <strong>emerging technologies</strong> to stay ahead and continuously grow.</p>
+        </div>
+    </section>
+
+    <section id="dreams">
+        <h2 class="section-title">Career Goal</h2>
+        <div class="card">
+            <p>My career goal is to become an engineer who can design and solve real-world electrical problems, not just understand theory.</p>
+            <p>I aim to develop strong practical skills in circuit design, system implementation, and problem-solving, and build a career based entirely on capability and tangible results.</p>
+        </div>
+    </section>
+
+    <section id="family">
+        <h2 class="section-title">My Family</h2>
+        <div class="card">
+            <p>I come from a family where discipline, consistency, and education are strongly valued.</p>
+            <p>My parents, my mother<strong>Alka Jamdar</strong> and my father<strong>Dhananjay Jamdar</strong>, and my brother, <strong>Harshad Jamdar</strong>, have always supported my ambitions. Their encouragement drives me to pursue engineering with passion and motivates me to continuously improve and grow.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Aditya Jamdar. Built with practical focus.</p>
+    </footer>
+
+</body>
+</html>
